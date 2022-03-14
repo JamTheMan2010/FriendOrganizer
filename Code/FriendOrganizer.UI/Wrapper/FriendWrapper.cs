@@ -61,7 +61,7 @@ namespace FriendOrganizer.UI.Wrapper
                     {
                         if (string.Equals(FirstName, "Robot", StringComparison.OrdinalIgnoreCase))
                         {
-                            AddError(FirstName, "Robots are not valid friends");
+                            AddError(nameof(FirstName), "Robots are not valid friends");
                         }
                         break;
                     }
