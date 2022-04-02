@@ -16,8 +16,6 @@ namespace FriendOrganizer.DataAccess
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
-
         }
     }
 }
