@@ -17,6 +17,7 @@
         {
             context.Friends.AddOrUpdate(
                 f => f.FirstName,
+                new Friend { FirstName = "James", LastName = "Smith" },
                 new Friend { FirstName = "Thomas", LastName = "Whitbread" },
                 new Friend { FirstName = "Simon", LastName = "Jackson" },
                 new Friend { FirstName = "Iain", LastName = "Telford" },
@@ -38,6 +39,12 @@
                 new ProgrammingLanguage { Name = "TypeScript" },
                 new ProgrammingLanguage { Name = "Java" }
                 );
+
+            context.SaveChanges();
+
+            context.FriendPhoneNumbers.AddOrUpdate(pn => pn.Number,
+                new FriendPhoneNumber
+                { Number = "+44 1453844495", FriendId = context.Friends.First().Id });
         }
     }
 }
